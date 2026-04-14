@@ -1,0 +1,4 @@
+test-results/
+*-workspace/
+node_modules/
+.DS_Store
