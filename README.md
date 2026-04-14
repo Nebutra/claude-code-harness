@@ -69,15 +69,55 @@ Each reference covers: what the principle says, why it matters, how Claude Code 
 | Identifying tech debt | All — use self-check questions as audit |
 | Pre-launch review | Full pass through all 7 |
 
-## TDD-Validated
+## Benchmarks
 
-This SKILL was tested with real prompts (Agent architecture design, production codebase tech debt audit) in A/B comparison: with SKILL vs. without SKILL vs. v1 SKILL vs. v2 SKILL.
+Tested with real prompts across 4 rounds, 6 subagents, 2 tasks (Agent architecture design + production codebase tech debt audit). Compared: no SKILL vs v1 SKILL vs v2 SKILL.
 
-Results:
-- Architecture designs show deeper boundary reasoning and intervention cost ladders
-- Tech debt audits find more actionable bugs (HMAC mismatches, hardcoded limits, mock code in production paths)
-- Principles are internalized, not parroted — no "Principle X applied" labels in output
-- Token efficiency improves with each iteration (52 tool calls vs 113 for the same audit)
+### Agent Architecture Design Task
+
+| Metric | No SKILL | v2 SKILL |
+|--------|----------|----------|
+| Tokens | 23K | 33K (+43%) |
+| Boundary reasoning | Lists component responsibilities | Justifies each boundary by semantic difference; rebuts 3 common wrong approaches |
+| Error handling | Decision tree (classify → route) | 5-level intervention ladder (retry → replan → human → fail) |
+| Type safety | Standard interfaces | Opaque `BudgetToken` forces compile-time budget check |
+| Crash recovery | Checkpoint mentioned | Every state answers "what if process crashes here?" + two-phase commit |
+| Tech recommendations | Specific (BullMQ, Postgres) | Specific + rationale per choice |
+| Anti-patterns section | None | 5 anti-patterns with explanation of why each is tempting |
+
+### Tech Debt Audit Task (real production monorepo)
+
+| Metric | No SKILL | v2 SKILL |
+|--------|----------|----------|
+| Tokens / tool calls | 116K / 113 | 87K / 52 (-25% / -54%) |
+| Unique findings | Zod version split, phantom schemas | S2S HMAC mismatch, mock payment path, hardcoded plan limit |
+| Fix specificity | Directional recommendations | Inline code fixes, "fix today" vs "next sprint" triage |
+| Insight quality | Describes what exists | "Half-completed good intentions are more dangerous than never starting — they create the illusion of safety" |
+
+### What the SKILL produces that baseline doesn't
+
+- Opaque type patterns that make wrong usage a compile error
+- Intervention cost ladders for error handling and resource management
+- Watchdog processes that don't trust the executor to self-terminate
+- "Phantom reliability" diagnosis (code that looks production-ready but runs in-process memory)
+- Bugs found through boundary/lifecycle lens that standard audit misses (HMAC auth actually broken)
+
+### Honest limitations
+
+- **+43% token cost** on architecture tasks — worth it for high-stakes decisions, overkill for CRUD
+- **Best on Sonnet/Opus** — may degrade on smaller models
+- **Not a domain expert** — improves architectural judgment, doesn't replace business knowledge
+- **Diminishing returns on simple tasks** — writing a utility function doesn't need 7 principles
+
+### When to use / when to skip
+
+| Use | Skip |
+|-----|------|
+| 0-to-1 architecture design | Simple bug fixes |
+| Tech debt audit | Writing unit tests |
+| Agent/AI product design | CRUD endpoints |
+| System review before launch | Daily coding tasks |
+| Upgrading demo to production | Documentation updates |
 
 ## Part of the Nebutra Ecosystem
 
