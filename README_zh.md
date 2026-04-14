@@ -31,10 +31,10 @@
 
 ```bash
 # 作为 git submodule 添加到项目
-git submodule add https://github.com/user/unicorn-harness.git .claude/skills/unicorn-harness
+git submodule add https://github.com/Nebutra/claude-code-harness.git .claude/skills/claude-code-harness
 
 # 或直接复制到 skills 目录
-cp unicorn-harness/SKILL.md ~/.claude/skills/unicorn-harness/SKILL.md
+cp claude-code-harness/SKILL.md ~/.claude/skills/claude-code-harness/SKILL.md
 ```
 
 ### 直接阅读原则

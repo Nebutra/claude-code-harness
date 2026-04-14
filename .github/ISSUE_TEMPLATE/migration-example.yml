@@ -1,0 +1,64 @@
+name: Migration Example
+description: Share how you applied a principle to your own product/domain
+title: "[Migration] "
+labels: ["migration-example", "contribution"]
+body:
+  - type: dropdown
+    id: principle
+    attributes:
+      label: Which principle?
+      options:
+        - "1. Minimum Intervention"
+        - "2. Boundary Is Product"
+        - "3. Lifecycle, Not Function"
+        - "4. Earn Trust Progressively"
+        - "5. Constraint As Fuel"
+        - "6. Policy In Code, Not Wiki"
+        - "7. Soul Before Scale"
+        - "Supplementary: Cache-Aware Architecture"
+        - "Supplementary: Multi-Agent Coordination"
+        - "Supplementary: Streaming and Real-Time"
+    validations:
+      required: true
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Your domain
+      options:
+        - SaaS / B2B
+        - E-commerce
+        - Content Platform
+        - CLI / DevTools
+        - Agent / AI Product
+        - AIGC / Creative Tools
+        - Mobile App
+        - Fintech / Payments
+        - Healthcare
+        - Web3
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: What were you building?
+      description: Brief context about your product/feature
+      placeholder: "We were building a multi-tenant billing system for our SaaS..."
+    validations:
+      required: true
+  - type: textarea
+    id: application
+    attributes:
+      label: How did you apply the principle?
+      description: What specific decision did the principle influence? What did you do differently?
+      placeholder: "Instead of a single error handler, we built a 4-level intervention ladder..."
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: What was the result?
+      description: Before vs after, metrics if available
+      placeholder: "Error alert volume dropped 80% because L1-L3 handled most cases automatically."
+    validations:
+      required: false

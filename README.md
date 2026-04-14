@@ -31,10 +31,10 @@ The gap between "can write code" and "can ship a unicorn-grade product" isn't te
 
 ```bash
 # Add as a git submodule to your project
-git submodule add https://github.com/user/unicorn-harness.git .claude/skills/unicorn-harness
+git submodule add https://github.com/Nebutra/claude-code-harness.git .claude/skills/claude-code-harness
 
 # Or copy the SKILL.md into your skills directory
-cp unicorn-harness/SKILL.md ~/.claude/skills/unicorn-harness/SKILL.md
+cp claude-code-harness/SKILL.md ~/.claude/skills/claude-code-harness/SKILL.md
 ```
 
 ### Just Read the Principles

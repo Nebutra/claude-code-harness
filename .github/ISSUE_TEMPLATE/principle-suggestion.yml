@@ -1,0 +1,30 @@
+name: Principle Suggestion
+description: Suggest a new principle or improvement to an existing one
+title: "[Suggestion] "
+labels: ["suggestion"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - New principle proposal
+        - Improvement to existing principle
+        - New migration example for existing principle
+        - Correction / factual error
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What's the principle or improvement? Why does it matter?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Where have you seen this principle applied successfully? (production systems, open source projects, personal experience)
+    validations:
+      required: false
