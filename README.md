@@ -56,6 +56,7 @@ Each reference covers: what the principle says, why it matters, how Claude Code 
 - [08 — Cache-Aware Architecture](references/08-cache-aware-architecture.md) — Prompt cache engineering, prefix sharing, cache-first design
 - [09 — Multi-Agent Coordination](references/09-multi-agent-coordination.md) — 3-layer hierarchy, permission propagation, communication patterns
 - [10 — Streaming and Real-Time](references/10-streaming-and-realtime.md) — AsyncGenerator, backpressure, progressive rendering
+- [11 — Agent Product Blueprint](references/11-agent-product-blueprint.md) — Concrete decision checklist: 3 Agent invariants, 7 design decisions, phased build path, production pitfalls
 
 ## When to Use
 

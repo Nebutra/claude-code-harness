@@ -184,6 +184,12 @@ engineering concerns. Read when the routing guide points to them.
   withholding pattern. Read when building real-time UIs, streaming APIs, or
   progressive data delivery. → `references/10-streaming-and-realtime.md`
 
+- **Agent Product Blueprint** — NOT abstract principles. Concrete architecture
+  decision checklist: the 3 invariants that make an Agent an Agent, 7 sequential
+  design decisions, phased build path (chatbot → Agent in 3 hours), common pitfalls
+  with production data. Read FIRST when building any Agent product.
+  → `references/11-agent-product-blueprint.md`
+
 ---
 
 ## Output Standards
@@ -220,7 +226,7 @@ When applying these principles, your output must include:
 | Designing API / architecture | 2 → 3 → 6 (boundaries, lifecycle, policy) |
 | Performance / cost optimization | 1 → 5 + ref 08 (cache-aware) |
 | Permission / security design | 4 → 2 → 6 (trust, boundaries, policy) |
-| Building Agent / AI product | ALL + refs 08, 09, 10 |
+| Building Agent / AI product | ref 11 FIRST, then ALL + refs 08, 09, 10 |
 | LLM cost engineering | 1 + ref 08 (cache-aware architecture) |
 | Streaming / real-time system | 3 + ref 10 (streaming) |
 | Multi-agent / distributed tasks | 2 + 3 + 4 + ref 09 (multi-agent) |

@@ -56,6 +56,7 @@ cp claude-code-harness/SKILL.md ~/.claude/skills/claude-code-harness/SKILL.md
 - [08 — 缓存感知架构](references/08-cache-aware-architecture.md) — Prompt Cache工程、前缀共享、缓存优先设计
 - [09 — 多Agent协调](references/09-multi-agent-coordination.md) — 3层协作架构、权限传递、通信模式
 - [10 — 流式与实时系统](references/10-streaming-and-realtime.md) — AsyncGenerator、背压、渐进渲染
+- [11 — Agent产品蓝图](references/11-agent-product-blueprint.md) — 具体决策清单：3个Agent不变量、7个设计决策、分阶段构建路径、生产环境踩坑
 
 ## 使用场景
 
