@@ -51,6 +51,12 @@ Each principle has a deep-dive reference document:
 
 Each reference covers: what the principle says, why it matters, how Claude Code implements it, how to migrate it to YOUR product, anti-patterns, and self-check questions.
 
+**Supplementary deep-dives** (for specialized domains):
+
+- [08 — Cache-Aware Architecture](references/08-cache-aware-architecture.md) — Prompt cache engineering, prefix sharing, cache-first design
+- [09 — Multi-Agent Coordination](references/09-multi-agent-coordination.md) — 3-layer hierarchy, permission propagation, communication patterns
+- [10 — Streaming and Real-Time](references/10-streaming-and-realtime.md) — AsyncGenerator, backpressure, progressive rendering
+
 ## When to Use
 
 | You're doing... | Focus on... |

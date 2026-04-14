@@ -164,6 +164,28 @@ React+Flexbox for CLI because they BELIEVE CLI users deserve native-app-grade in
 
 ---
 
+## Supplementary References
+
+Deep-dive guides for domains where the 7 principles intersect with specialized
+engineering concerns. Read when the routing guide points to them.
+
+- **Cache-Aware Architecture** — Prompt cache engineering, prefix sharing for
+  parallel agents, cache-first data structure design, CDN/DB/build cache patterns.
+  Read when designing LLM products, multi-agent systems, or any system with
+  expensive computation. → `references/08-cache-aware-architecture.md`
+
+- **Multi-Agent Coordination** — 3-layer hierarchy (subagent/team/coordinator),
+  permission propagation rules, filesystem mailbox communication, agent lifecycle
+  and failure handling. Read when building Agent products or distributed task
+  systems. → `references/09-multi-agent-coordination.md`
+
+- **Streaming and Real-Time** — AsyncGenerator as streaming primitive, backpressure,
+  cascading cancellation, progressive UI rendering, circuit breakers, message
+  withholding pattern. Read when building real-time UIs, streaming APIs, or
+  progressive data delivery. → `references/10-streaming-and-realtime.md`
+
+---
+
 ## Output Standards
 
 When applying these principles, your output must include:
@@ -189,3 +211,29 @@ When applying these principles, your output must include:
 - Focus on boundary violations, lifecycle gaps, and missing policy enforcement
 - Include architecture-level observations, not just code-level style issues
 - Recommend architecture tests that prevent recurrence, not just point fixes
+
+## Routing Guide
+
+| You're doing... | Focus on... |
+|-----------------|-------------|
+| Building from 0 → 1 | 7 → 5 → 2 (soul, constraints, boundaries) |
+| Designing API / architecture | 2 → 3 → 6 (boundaries, lifecycle, policy) |
+| Performance / cost optimization | 1 → 5 + ref 08 (cache-aware) |
+| Permission / security design | 4 → 2 → 6 (trust, boundaries, policy) |
+| Building Agent / AI product | ALL + refs 08, 09, 10 |
+| LLM cost engineering | 1 + ref 08 (cache-aware architecture) |
+| Streaming / real-time system | 3 + ref 10 (streaming) |
+| Multi-agent / distributed tasks | 2 + 3 + 4 + ref 09 (multi-agent) |
+| Identifying tech debt | ALL — use self-check questions as audit |
+| Pre-launch review | ALL, full pass |
+| Demo → production upgrade | 3 → 2 → 6 → 1 |
+
+## One-Line Cheat Sheet
+
+1. **Lightest fix first** — escalate only when cheaper options fail
+2. **Lines shape experience** — draw boundaries by semantic difference
+3. **Born, lives, dies** — design the lifecycle before the function
+4. **Earn, don't demand** — trust at the moment of need, minimum cost
+5. **Limits are launchpads** — constraints force focus, focus creates moats
+6. **Compile the rules** — if a linter can check it, a human shouldn't have to
+7. **Soul is foundation** — personality decisions precede technology decisions

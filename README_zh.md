@@ -51,6 +51,12 @@ cp unicorn-harness/SKILL.md ~/.claude/skills/unicorn-harness/SKILL.md
 
 每个参考文档覆盖：原则解释、为什么重要、Claude Code 如何实现、如何迁移到你的产品、反模式、自检问题。
 
+**补充深度参考**（专项领域）：
+
+- [08 — 缓存感知架构](references/08-cache-aware-architecture.md) — Prompt Cache工程、前缀共享、缓存优先设计
+- [09 — 多Agent协调](references/09-multi-agent-coordination.md) — 3层协作架构、权限传递、通信模式
+- [10 — 流式与实时系统](references/10-streaming-and-realtime.md) — AsyncGenerator、背压、渐进渲染
+
 ## 使用场景
 
 | 你在做什么 | 重点关注 |
