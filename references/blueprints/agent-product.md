@@ -60,6 +60,8 @@ stateless loop in a new stateful session manager without modifying the loop itse
 **Your decision:** separate your session state from your loop logic. The session
 owns "what has happened." The loop owns "what to do next."
 
+> Deep dive → `principles/02-boundary-is-product.md` (separate by state lifetime)
+
 ---
 
 ### Decision 2: Tool System Design
@@ -111,6 +113,9 @@ simultaneously."
 - Add `isReadOnly` and `timeoutMs` metadata from day one
 - Catch all errors in executeTool — never let a tool crash the loop
 - Use lazySchema if you have >10 tools (schema tokens add up in every API call)
+
+> Deep dive → `principles/06-policy-in-code-not-wiki.md` (encode tool safety in metadata, not docs)
+> Deep dive → `principles/03-lifecycle-not-function.md` (tool lifecycle: define → register → validate → authorize → execute)
 
 ---
 
@@ -189,6 +194,9 @@ where your context budget goes.
 - Measure where your tokens go: system prompt, tool schemas, tool results,
   conversation history — you can't optimize what you don't measure
 
+> Deep dive → `principles/01-minimum-intervention.md` (intervention cost ladder)
+> Deep dive → `domains/cache-aware-architecture.md` (prompt cache prefix optimization)
+
 ---
 
 ### Decision 4: Termination Conditions
@@ -222,6 +230,8 @@ while (true) {
 }
 ```
 
+> Deep dive → `principles/03-lifecycle-not-function.md` (explicit termination conditions)
+
 ---
 
 ### Decision 5: Streaming, Not Batching
@@ -253,6 +263,9 @@ API generation time). At scale, this adds up.
 - Level 1 (stream text) is non-negotiable — implement on day one
 - Level 2 (streaming tool execution) is a significant optimization — implement
   when you have multi-tool workflows
+
+> Deep dive → `domains/streaming-and-realtime.md` (AsyncGenerator, backpressure, progressive rendering)
+> Deep dive → `principles/05-constraint-as-fuel.md` (latency constraint → streaming architecture)
 
 ---
 
@@ -290,6 +303,9 @@ specific edit.
 - At minimum, confirm write operations before executing
 - Enforce read-before-edit for file modifications
 - Never let the model auto-approve its own actions
+
+> Deep dive → `principles/04-earn-trust-progressively.md` (contextual, non-transitive trust)
+> Deep dive → `principles/06-policy-in-code-not-wiki.md` (encode permissions in types, not comments)
 
 ---
 

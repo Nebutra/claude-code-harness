@@ -41,22 +41,26 @@ cp claude-code-harness/SKILL.md ~/.claude/skills/claude-code-harness/SKILL.md
 
 Each principle has a deep-dive reference document:
 
-- [01 — Minimum Intervention](references/01-minimum-intervention.md)
-- [02 — Boundary Is Product](references/02-boundary-is-product.md)
-- [03 — Lifecycle, Not Function](references/03-lifecycle-not-function.md)
-- [04 — Earn Trust Progressively](references/04-earn-trust-progressively.md)
-- [05 — Constraint As Fuel](references/05-constraint-as-fuel.md)
-- [06 — Policy In Code, Not Wiki](references/06-policy-in-code-not-wiki.md)
-- [07 — Soul Before Scale](references/07-soul-before-scale.md)
+- [01 — Minimum Intervention](references/principles/01-minimum-intervention.md)
+- [02 — Boundary Is Product](references/principles/02-boundary-is-product.md)
+- [03 — Lifecycle, Not Function](references/principles/03-lifecycle-not-function.md)
+- [04 — Earn Trust Progressively](references/principles/04-earn-trust-progressively.md)
+- [05 — Constraint As Fuel](references/principles/05-constraint-as-fuel.md)
+- [06 — Policy In Code, Not Wiki](references/principles/06-policy-in-code-not-wiki.md)
+- [07 — Soul Before Scale](references/principles/07-soul-before-scale.md)
 
 Each reference covers: what the principle says, why it matters, how Claude Code implements it, how to migrate it to YOUR product, anti-patterns, and self-check questions.
 
 **Supplementary deep-dives** (for specialized domains):
 
-- [08 — Cache-Aware Architecture](references/08-cache-aware-architecture.md) — Prompt cache engineering, prefix sharing, cache-first design
-- [09 — Multi-Agent Coordination](references/09-multi-agent-coordination.md) — 3-layer hierarchy, permission propagation, communication patterns
-- [10 — Streaming and Real-Time](references/10-streaming-and-realtime.md) — AsyncGenerator, backpressure, progressive rendering
-- [11 — Agent Product Blueprint](references/11-agent-product-blueprint.md) — Concrete decision checklist: 3 Agent invariants, 7 design decisions, phased build path, production pitfalls
+- [Cache-Aware Architecture](references/domains/cache-aware-architecture.md) — Prompt cache engineering, prefix sharing, cache-first design
+- [Multi-Agent Coordination](references/domains/multi-agent-coordination.md) — 3-layer hierarchy, permission propagation, communication patterns
+- [Streaming and Real-Time](references/domains/streaming-and-realtime.md) — AsyncGenerator, backpressure, progressive rendering
+
+**Blueprints** (step-by-step decision checklists):
+
+- [Agent Product Blueprint](references/blueprints/agent-product.md) — 3 Agent invariants, 7 design decisions, phased build path, production pitfalls
+- [Self-Assessment Checklist](references/blueprints/self-assessment.md) — 29-question audit across all principles + Agent-specific checks
 
 ## When to Use
 

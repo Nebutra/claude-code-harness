@@ -41,22 +41,26 @@ cp claude-code-harness/SKILL.md ~/.claude/skills/claude-code-harness/SKILL.md
 
 每条原则都有一个深度参考文档：
 
-- [01 — 最小干预](references/01-minimum-intervention.md)
-- [02 — 边界即产品](references/02-boundary-is-product.md)
-- [03 — 生命周期优先](references/03-lifecycle-not-function.md)
-- [04 — 渐进赢得信任](references/04-earn-trust-progressively.md)
-- [05 — 约束即燃料](references/05-constraint-as-fuel.md)
-- [06 — 策略写进代码](references/06-policy-in-code-not-wiki.md)
-- [07 — 先有灵魂再谈规模](references/07-soul-before-scale.md)
+- [01 — 最小干预](references/principles/01-minimum-intervention.md)
+- [02 — 边界即产品](references/principles/02-boundary-is-product.md)
+- [03 — 生命周期优先](references/principles/03-lifecycle-not-function.md)
+- [04 — 渐进赢得信任](references/principles/04-earn-trust-progressively.md)
+- [05 — 约束即燃料](references/principles/05-constraint-as-fuel.md)
+- [06 — 策略写进代码](references/principles/06-policy-in-code-not-wiki.md)
+- [07 — 先有灵魂再谈规模](references/principles/07-soul-before-scale.md)
 
 每个参考文档覆盖：原则解释、为什么重要、Claude Code 如何实现、如何迁移到你的产品、反模式、自检问题。
 
 **补充深度参考**（专项领域）：
 
-- [08 — 缓存感知架构](references/08-cache-aware-architecture.md) — Prompt Cache工程、前缀共享、缓存优先设计
-- [09 — 多Agent协调](references/09-multi-agent-coordination.md) — 3层协作架构、权限传递、通信模式
-- [10 — 流式与实时系统](references/10-streaming-and-realtime.md) — AsyncGenerator、背压、渐进渲染
-- [11 — Agent产品蓝图](references/11-agent-product-blueprint.md) — 具体决策清单：3个Agent不变量、7个设计决策、分阶段构建路径、生产环境踩坑
+- [缓存感知架构](references/domains/cache-aware-architecture.md) — Prompt Cache工程、前缀共享、缓存优先设计
+- [多Agent协调](references/domains/multi-agent-coordination.md) — 3层协作架构、权限传递、通信模式
+- [流式与实时系统](references/domains/streaming-and-realtime.md) — AsyncGenerator、背压、渐进渲染
+
+**蓝图**（分步决策清单）：
+
+- [Agent产品蓝图](references/blueprints/agent-product.md) — 3个Agent不变量、7个设计决策、分阶段构建路径、生产踩坑
+- [自评审计清单](references/blueprints/self-assessment.md) — 29个问题覆盖全部原则 + Agent专项检查
 
 ## 使用场景
 
