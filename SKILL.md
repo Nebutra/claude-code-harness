@@ -24,8 +24,38 @@ state diagrams with crash-recovery per state; concrete interfaces (TypeScript/Py
 technology recommendations with rationale; phased build plan; anti-patterns section.
 
 **Output standards for tech debt audits:**
+
+CRITICAL: Follow this two-phase process. Do NOT skip the scan phase.
+
+Phase 1 — BREADTH SCAN (cast a wide net):
+Before going deep on anything, quickly scan ALL of these areas. Spend no more than
+1-2 tool calls per area. The goal is to build a MAP of potential issues, not to
+analyze any single one deeply yet.
+
+```
+Coverage checklist (must touch ALL):
+□ Auth/security: grep for requireAuth, check which routes lack it
+□ Data access: grep for direct prisma calls, check if RLS/scoping is used
+□ Secrets: grep for "encrypt", "credential", "secret" in schema + routes
+□ In-memory state: grep for "new Map", "= new Map", module-level variables
+□ Feature flags: check if multiple flag systems exist, check lifecycle fields
+□ Billing/entitlements: check enforcement points, hardcoded values
+□ Dependencies: check version consistency across packages
+□ Schema integrity: verify declared schemas/models match actual usage
+□ S2S communication: check internal service auth consistency
+□ Saga/workflow: check idempotency, compensation error handling, mock paths
+```
+
+Phase 2 — DEPTH ANALYSIS (go deep on findings):
+Now analyze each finding from Phase 1 in depth. For each:
 explain WHY it's debt, not just WHAT; include file paths and code quotes; concrete
-fixes with inline code; "fix today" vs "next sprint" triage; "what's working well" section.
+fixes with inline code; "fix today" vs "next sprint" triage.
+
+**"What's Working Well" section — VERIFY before praising:**
+Before listing something as a positive, confirm it actually works as claimed.
+Check that the code is called (not just defined), that the schema matches reality
+(not just declaration), and that the feature is wired end-to-end. Praising something
+that doesn't actually work is worse than not mentioning it — it creates false confidence.
 
 ## 7 Principles
 
